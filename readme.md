@@ -1,4 +1,4 @@
-# sku多规格
+# 对象的扩展
 ```
 const extend = require('zhf.extend');
 
