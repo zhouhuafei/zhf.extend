@@ -1,5 +1,21 @@
 const extend = require('../dist/index.min');
 
+test(`extend([1, 2, 3], [undefined, 4, undefined]); // [1, 4, 3]`, () => {
+    expect(extend([1, 2, 3], [undefined, 4, undefined])).toEqual([1, 4, 3]);
+});
+
+test(`extend({a: 1}, {a: undefined}); // {a: 1}`, () => {
+    expect(extend({a: 1}, {a: undefined})).toEqual({a: 1});
+});
+
+test(`extend({obj: {a: 1}}, {obj: {a: undefined}}); // {obj: {a: 1}}`, () => {
+    expect(extend({obj: {a: 1}}, {obj: {a: undefined}})).toEqual({obj: {a: 1}});
+});
+
+test(`extend([{obj: {a: 1}}, 2], [{obj: {a: undefined}}, undefined]); // [{obj: {a: 1}}, 2]`, () => {
+    expect(extend([{obj: {a: 1}}, 2], [{obj: {a: undefined}}, undefined])).toEqual([{obj: {a: 1}}, 2]);
+});
+
 test(`extend([1, 3], [2]); // [2, 3]`, () => {
     expect(extend([1, 3], [2])).toEqual([2, 3]);
 });
